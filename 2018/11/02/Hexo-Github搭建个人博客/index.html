@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>xiaxin</title>
+<title>Hexo+Github搭建个人博客 | xiaxin</title>
 
 
     <link rel="alternate" href="/atom.xml" title="xiaxin" type="application/atom+xml">
@@ -136,9 +136,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="">
+        <h1 id="Hexo+Github搭建个人博客">
             
-	            NO Title!
+	            Hexo+Github搭建个人博客
             
         </h1>
         <div class="post-meta">
@@ -146,8 +146,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/ ">
-             
+        <a href="/categories/web">
+            web
         </a>
     </span>
     
@@ -178,37 +178,107 @@
     </div>
     
     <div class="post-body post-content">
-        <hr>
-<p>title: Hexo+github搭建个人博客<br>date: 2018-11-02 17:49:12<br>tags:<br>categories: web<br>—# Hexo+github搭建个人博客</p>
-<p>@(博客搭建)[作者:夏鑫|编辑Markdown]</p>
-<p>###什么是Hexo?<br><strong>Hexo</strong>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+        <h1 id="Hexo-github搭建个人博客"><a href="#Hexo-github搭建个人博客" class="headerlink" title="Hexo+github搭建个人博客"></a>Hexo+github搭建个人博客</h1><p>@(博客搭建)[作者:夏鑫|编辑Markdown]</p>
+<h3 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo?"></a>什么是Hexo?</h3><p><strong>Hexo</strong>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <hr>
-<p>###什么是Markdown?<br><strong>Markdown</strong>是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。</p>
+<h3 id="什么是Markdown"><a href="#什么是Markdown" class="headerlink" title="什么是Markdown?"></a>什么是Markdown?</h3><p><strong>Markdown</strong>是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。</p>
 <hr>
-<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><p>###1.软件的的安装<br>—安装nodejs<br>—安装Git</p>
-<p>####1&gt;下载并安装nodejs<br>——下载nodejs安装包<br>——安装nodejs<br>——安装完成之后WIN+R 输cmd打开控制台<br>——输入node -v查看node版本   如果有则node安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
-<p>——输入npm -v查看npm 版本  如果有则npm安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure></p>
-<p>####2&gt;下载并安装Git<br>——官网下载Git<br>——安装Git<br>——验证是否安装成功（WIN+R 输入cmd进入控制台输入git –version）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure></p>
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="1-软件的的安装"><a href="#1-软件的的安装" class="headerlink" title="1.软件的的安装"></a>1.软件的的安装</h3><blockquote>
+<ol>
+<li>安装nodejs</li>
+<li>安装Git</li>
+</ol>
+</blockquote>
+<h4 id="1-gt-下载并安装nodejs"><a href="#1-gt-下载并安装nodejs" class="headerlink" title="1&gt;下载并安装nodejs"></a>1&gt;下载并安装nodejs</h4><blockquote>
+<ol>
+<li>下载nodejs安装包</li>
+<li>安装nodejs</li>
+<li>安装完成之后WIN+R 输cmd打开控制台</li>
+<li>输入node -v查看node版本   如果有则node安装成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>5.输入npm -v查看npm 版本  如果有则npm安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="2-gt-下载并安装Git"><a href="#2-gt-下载并安装Git" class="headerlink" title="2&gt;下载并安装Git"></a>2&gt;下载并安装Git</h4><blockquote>
+<ol>
+<li>官网下载Git</li>
+<li>安装Git</li>
+<li>验证是否安装成功（WIN+R 输入cmd进入控制台输入git –version）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
 <p>安装完成之后，右键鼠标就可以看见Git GUI Here 和 Git Bash Here</p>
-<p>####3&gt;安装Hexo<br>——在任意位置打开Git Bash Here<br>——输入npm install -g hexo-cli<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="3-gt-安装Hexo"><a href="#3-gt-安装Hexo" class="headerlink" title="3&gt;安装Hexo"></a>3&gt;安装Hexo</h4><blockquote>
+<ol>
+<li>在任意位置打开Git Bash Here </li>
+<li>输入npm install -g hexo-cli<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
 <p>由于连接国外服务器 ，所以安装过程比较慢，当然我们也可以使用淘宝镜像进行安装，使用如下命令安装淘宝镜像<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
 <p>安装完之后使用如下命令安装速度就会变快<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<p>–安装完之后时候hexo -v 验证是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p>
-<p>###2.Hexo生成本地博客</p>
-<p>####1&gt;创建本地文件夹<br>这个文件夹将放Hexo生成的源文件，文件名称可以随意。</p>
-<p>####2&gt;运行Git Bash<br>在创建好的文件夹下右键运行Git Bash</p>
-<p>####3&gt;初始化Hexo<br>–输入 hexo init<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>3.安装完之后时候hexo -v 验证是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="2-Hexo生成本地博客"><a href="#2-Hexo生成本地博客" class="headerlink" title="2.Hexo生成本地博客"></a>2.Hexo生成本地博客</h3><h4 id="1-gt-创建本地文件夹"><a href="#1-gt-创建本地文件夹" class="headerlink" title="1&gt;创建本地文件夹"></a>1&gt;创建本地文件夹</h4><blockquote>
+<ol>
+<li>创建文件夹的这个文件夹将放Hexo生成的源文件，文件名称可以随意。</li>
+</ol>
+</blockquote>
+<h4 id="2-gt-运行Git-Bash"><a href="#2-gt-运行Git-Bash" class="headerlink" title="2&gt;运行Git Bash"></a>2&gt;运行Git Bash</h4><blockquote>
+<ol start="2">
+<li>在创建好的文件夹下右键运行Git Bash</li>
+</ol>
+</blockquote>
+<h4 id="3-gt-初始化Hexo"><a href="#3-gt-初始化Hexo" class="headerlink" title="3&gt;初始化Hexo"></a>3&gt;初始化Hexo</h4><blockquote>
+<ol start="3">
+<li>输入 hexo init<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
 <p>完成后打开文件夹，此时文件夹已生成了一些文件</p>
-<p><img src="./52AQQ04J`22{6ZZS4PDX6UO.png" alt="Alt text"></p>
-<p>–输入npm install 安装所需组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
-<p>####4&gt;修改配置文件信息<br>–打开_config.yml文件<br>修改其中的title ，author  等信息</p>
-<p>####4&gt;生成博客<br>–Git Bash控制台输入hexo g<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
-<p>####5&gt;本地部署测试<br>–Git Bash控制台输入hexo s<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p><img src="./hexo_init7.png" alt="Alt text"></p>
-<p> –浏览器中输入红的方框中的地址就可以看到自己的博客了<br> 本地博客的生成已经到此结束</p>
+</blockquote>
+<p><img src="/2018/11/02/Hexo-Github搭建个人博客/./52AQQ04J`22{6ZZS4PDX6UO.png" alt="Alt text"></p>
+<blockquote>
+<ol start="4">
+<li>输入npm install 安装所需组件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h4 id="4-gt-修改配置文件信息"><a href="#4-gt-修改配置文件信息" class="headerlink" title="4&gt;修改配置文件信息"></a>4&gt;修改配置文件信息</h4><blockquote>
+<ol start="5">
+<li>打开_config.yml文件,修改其中的title ，author  等信息</li>
+</ol>
+</blockquote>
+<h4 id="4-gt-生成博客"><a href="#4-gt-生成博客" class="headerlink" title="4&gt;生成博客"></a>4&gt;生成博客</h4><blockquote>
+<ol start="6">
+<li>Git Bash控制台输入hexo g<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h4 id="5-gt-本地部署测试"><a href="#5-gt-本地部署测试" class="headerlink" title="5&gt;本地部署测试"></a>5&gt;本地部署测试</h4><blockquote>
+<ol start="7">
+<li>Git Bash控制台输入hexo s<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p><img src="/2018/11/02/Hexo-Github搭建个人博客/./hexo_init7.png" alt="Alt text"></p>
+<blockquote>
+<p>浏览器中输入红的方框中的地址就可以看到自己的博客了本地博客的生成已经到此结束</p>
+</blockquote>
 <hr>
-<p>###3.Github服务器部署</p>
+<h3 id="3-Github服务器部署"><a href="#3-Github服务器部署" class="headerlink" title="3.Github服务器部署"></a>3.Github服务器部署</h3><blockquote>
 <p>将在下篇文章中分享相关Github部署方法。。。。。。。。。</p>
+</blockquote>
 
     </div>
     
@@ -243,9 +313,9 @@
 <div class="article-nav prev-next-wrap clearfix">
     
     
-        <a href="/2018/03/01/algorithm/" class="next-post btn btn-default" title="杀死一只知更鸟观后感">
+        <a href="/2018/11/02/algorithm/" class="next-post btn btn-default" title="测试hexo文章发布">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">杀死一只知更鸟观后感</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">测试hexo文章发布</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -288,7 +358,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建步骤"><span class="toc-text">搭建步骤</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-github搭建个人博客"><span class="toc-text">Hexo+github搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是Hexo"><span class="toc-text">什么是Hexo?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是Markdown"><span class="toc-text">什么是Markdown?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建步骤"><span class="toc-text">搭建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-软件的的安装"><span class="toc-text">1.软件的的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-gt-下载并安装nodejs"><span class="toc-text">1&gt;下载并安装nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-gt-下载并安装Git"><span class="toc-text">2&gt;下载并安装Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-gt-安装Hexo"><span class="toc-text">3&gt;安装Hexo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Hexo生成本地博客"><span class="toc-text">2.Hexo生成本地博客</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-gt-创建本地文件夹"><span class="toc-text">1&gt;创建本地文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-gt-运行Git-Bash"><span class="toc-text">2&gt;运行Git Bash</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-gt-初始化Hexo"><span class="toc-text">3&gt;初始化Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-gt-修改配置文件信息"><span class="toc-text">4&gt;修改配置文件信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-gt-生成博客"><span class="toc-text">4&gt;生成博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-gt-本地部署测试"><span class="toc-text">5&gt;本地部署测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Github服务器部署"><span class="toc-text">3.Github服务器部署</span></a></li></ol></li></ol>
         
     </div>
 </aside>
