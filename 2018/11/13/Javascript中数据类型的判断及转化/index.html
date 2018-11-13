@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="xiaxin">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Javascript中数据类型的判断及转化 | xiaxin</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="xiaxin" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="summer">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">xiaxin</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/web/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/nodejs/"><i class="fa "></i>nodejs</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/datastructure/"><i class="fa "></i>数据结构</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Javascript中数据类型的判断及转化">
+            
+	            Javascript中数据类型的判断及转化
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/web">
+            web
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/13</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Javascript中数据类型的判断及转化"><a href="#Javascript中数据类型的判断及转化" class="headerlink" title="Javascript中数据类型的判断及转化"></a>Javascript中数据类型的判断及转化</h1><h3 id="Javascript中的数据类型"><a href="#Javascript中的数据类型" class="headerlink" title="Javascript中的数据类型"></a>Javascript中的数据类型</h3><blockquote>
+<p>Javascript 共有七种数据类型：字符串、数字、布尔、数组、对象、Null、Undefined  </p>
+</blockquote>
+<h3 id="Javascript中的数据类型的判断"><a href="#Javascript中的数据类型的判断" class="headerlink" title="Javascript中的数据类型的判断"></a>Javascript中的数据类型的判断</h3><blockquote>
+<p>Javascript 判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type()</p>
+</blockquote>
+<h4 id="1-常见的判断方法：typeof"><a href="#1-常见的判断方法：typeof" class="headerlink" title="1.常见的判断方法：typeof"></a>1.常见的判断方法：typeof</h4><blockquote>
+<p>alert(typeof a)  —————–&gt; string<br>alert(typeof b)  —————–&gt; number<br>alert((typeof a) == “string”)  —————–&gt; true<br>alert((typeof b) == “number”)  —————–&gt; true</p>
+</blockquote>
+<h4 id="2-判断已知对象的方法：instanceof"><a href="#2-判断已知对象的方法：instanceof" class="headerlink" title="2.判断已知对象的方法：instanceof"></a>2.判断已知对象的方法：instanceof</h4><blockquote>
+<p>alert(a instanceof Array)  ———————&gt;true<br>alert(a instanceof Function)  ———————&gt;false<br><em>instanceof</em>后面跟的是对象类型</p>
+</blockquote>
+<h4 id="3-根据对象的constructor判断：-constructor"><a href="#3-根据对象的constructor判断：-constructor" class="headerlink" title="3.根据对象的constructor判断： constructor"></a>3.根据对象的constructor判断： constructor</h4><blockquote>
+<p>alert(c.constructor == Array) ———————&gt; true<br>alert(d.constructor == Array) ———————&gt; false<br>此处==应写为 “三等于”</p>
+</blockquote>
+<h4 id="4-通用方法：prototype"><a href="#4-通用方法：prototype" class="headerlink" title="4.通用方法：prototype"></a>4.通用方法：prototype</h4><blockquote>
+<p>alert(Object.prototype.toString.call(a) == ‘[object String]’) ——-&gt; true<br>alert(Object.prototype.toString.call(b) == ‘[object Number]’) ——-&gt; true<br>此处==应写为 “三等于”</p>
+</blockquote>
+<h4 id="5-万能方法：prototype"><a href="#5-万能方法：prototype" class="headerlink" title="5.万能方法：prototype"></a>5.万能方法：prototype</h4><blockquote>
+<p>jQuery.type( undefined ) == “undefined”<br>jQuery.type() == “undefined”<br>jQuery.type( null ) == “null”<br>jQuery.type( true ) == “boolean”<br>jQuery.type( 3 ) == “number”<br>jQuery.type( new Error() ) == “error”                     // as of jQuery 1.9<br>jQuery.type( /test/ ) == “regexp”<br>//此处==应写为 “三等于”</p>
+</blockquote>
+<hr>
+<h3 id="Javascript中的数据类型的转化"><a href="#Javascript中的数据类型的转化" class="headerlink" title="Javascript中的数据类型的转化"></a>Javascript中的数据类型的转化</h3><h4 id="1-显示转换"><a href="#1-显示转换" class="headerlink" title="1.显示转换"></a>1.显示转换</h4><blockquote>
+<p>转换为数值类型：Number(mix)、parseInt(string,radix)、parseFloat(string)<br>转换为字符串类型：toString(radix)、String(mix)<br>转换为布尔类型：Boolean(mix)</p>
+</blockquote>
+<h4 id="2-隐式转换"><a href="#2-隐式转换" class="headerlink" title="2.隐式转换"></a>2.隐式转换</h4><p>在某些情况下即使我们不进行手动发显示转换，Javascript也会为我们进行自动转换，这就是隐式转换。</p>
+<h5 id="1-gt-用于检测是否为非数值函数-isNaN-mix"><a href="#1-gt-用于检测是否为非数值函数-isNaN-mix" class="headerlink" title="1&gt;用于检测是否为非数值函数 isNaN(mix)"></a>1&gt;用于检测是否为非数值函数 isNaN(mix)</h5><blockquote>
+<p>isNaN()函数，经测试发现，该函数会尝试将参数值用Number()进行转换，如果结果为“非数值”则返回true，否则返回false。</p>
+</blockquote>
+<h5 id="2-gt-递增递减操作符（包括前置和后置）、一元正负符号操作符"><a href="#2-gt-递增递减操作符（包括前置和后置）、一元正负符号操作符" class="headerlink" title="2&gt;递增递减操作符（包括前置和后置）、一元正负符号操作符"></a>2&gt;递增递减操作符（包括前置和后置）、一元正负符号操作符</h5><blockquote>
+<p>（1）是包含有效数字字符的字符串，先将其转换为数字值（转换规则同Number()），在执行加减1的操作，字符串变量变为数值变量。<br>（2）如果是不包含有效数字字符的字符串，将变量的值设置为NaN，字符串变量变成数值变量。<br>（3）如果是布尔值false，先将其转换为0再执行加减1的操作，布尔值变量编程数值变量。<br>（4）如果是布尔值true，先将其转换为1再执行加减1的操作，布尔值变量变成数值变量。<br>（5）如果是浮点数值，执行加减1的操作。<br>（6）如果是对象，先调用对象的valueOf()方法，然后对该返回值应用前面的规则。如果结果是NaN，则调用toString()方法后再应用前面的规则。对象变量变成数值变量。</p>
+</blockquote>
+<h5 id="3-gt-加法运算操作符"><a href="#3-gt-加法运算操作符" class="headerlink" title="3&gt;加法运算操作符"></a>3&gt;加法运算操作符</h5><blockquote>
+<p>加号运算操作符在Javascript也用于字符串连接符，所以加号操作符的规则分两种情况：<br>如果两个操作值都是数值，其规则为：<br>(1)如果一个操作数为NaN，则结果为NaN<br>(2)如果是Infinity+Infinity，结果是Infinity<br>(3)如果是-Infinity+(-Infinity)，结果是-Infinity<br>(4)如果是Infinity+(-Infinity)，结果是NaN<br>(5)如果是+0+(+0)，结果为+0<br>(6)如果是(-0)+(-0)，结果为-0<br>(7)如果是(+0)+(-0)，结果为+0<br>如果有一个操作值为字符串，则：<br>如果两个操作值都是字符串，则将它们拼接起来<br>如果只有一个操作值为字符串，则将另外操作值转换为字符串，然后拼接起来<br>如果一个操作数是对象、数值或者布尔值，则调用toString()方法取得字符值，然后再应用前面的字符串规则。对于undefined和null，分别调用String()显 式转换为字符串。<br>可以看出，加法运算中，如果有一个操作值为字符串类型，则将另一个操作值转换为字符串，最后连接起来。</p>
+</blockquote>
+<h5 id="4-gt-乘除、减号运算符、取模运算符"><a href="#4-gt-乘除、减号运算符、取模运算符" class="headerlink" title="4&gt;乘除、减号运算符、取模运算符"></a>4&gt;乘除、减号运算符、取模运算符</h5><blockquote>
+<p>这些操作符针对的是运算，所以他们具有共同性：如果操作值之一不是数值，则被隐式调用Number()函数进行转换。具体每一种运算的详细规则请参考ECMAScript中的定义。</p>
+</blockquote>
+<h5 id="5-gt-逻辑操作符（-、-amp-amp-、-）"><a href="#5-gt-逻辑操作符（-、-amp-amp-、-）" class="headerlink" title="5&gt;逻辑操作符（!、&amp;&amp;、||）"></a>5&gt;逻辑操作符（!、&amp;&amp;、||）</h5><blockquote>
+<p>逻辑非（！）操作符首先通过Boolean()函数将它的操作值转换为布尔值，然后求反。<br>一、逻辑与（&amp;&amp;）操作符，如果一个操作值不是布尔值时，遵循以下规则进行转换：<br>（1）如果第一个操作数经Boolean()转换后为true，则返回第二个操作值，否则返回第一个值（不是Boolean()转换后的值）<br>（2）如果有一个操作值为null，返回null<br>（3）如果有一个操作值为NaN，返回NaN<br>（4）如果有一个操作值为undefined，返回undefined<br>逻辑或（||）操作符，如果一个操作值不是布尔值，遵循以下规则：<br>（1）如果第一个操作值经Boolean()转换后为false，则返回第二个操作值，否则返回第一个操作值（不是Boolean()转换后的值）<br>（2）对于undefined、null和NaN的处理规则与逻辑与（&amp;&amp;）相同</p>
+</blockquote>
+<h6 id="6-gt-关系操作符（-lt-gt-lt-gt-）"><a href="#6-gt-关系操作符（-lt-gt-lt-gt-）" class="headerlink" title="6&gt;关系操作符（&lt;, &gt;, &lt;=, &gt;=）"></a>6&gt;关系操作符（&lt;, &gt;, &lt;=, &gt;=）</h6><blockquote>
+<p>与上述操作符一样，关系操作符的操作值也可以是任意类型的，所以使用非数值类型参与比较时也需要系统进行隐式类型转换：<br>（1）如果两个操作值都是数值，则进行数值比较<br>（2）如果两个操作值都是字符串，则比较字符串对应的字符编码值<br>（3）如果只有一个操作值是数值，则将另一个操作值转换为数值，进行数值比较<br>（4）如果一个操作数是对象，则调用valueOf()方法（如果对象没有valueOf()方法则调用toString()方法），得到的结果按照前面的规则执行比较<br>（5）如果一个操作值是布尔值，则将其转换为数值，再进行比较<br>注：NaN是非常特殊的值，它不和任何类型的值相等，包括它自己，同时它与任何类型的值比较大小时都返回false。</p>
+</blockquote>
+<h5 id="7-gt-相等操作符（-）"><a href="#7-gt-相等操作符（-）" class="headerlink" title="7&gt; 相等操作符（==）"></a>7&gt; 相等操作符（==）</h5><blockquote>
+<p>相等操作符会对操作值进行隐式转换后进行比较：<br>（1）如果一个操作值为布尔值，则在比较之前先将其转换为数值<br>（2）如果一个操作值为字符串，另一个操作值为数值，则通过Number()函数将字符串转换为数值<br>（3）如果一个操作值是对象，另一个不是，则调用对象的valueOf()方法，得到的结果按照前面的规则进行比较<br>（4）null与undefined是相等的<br>（5）如果一个操作值为NaN，则相等比较返回false<br>（6）如果两个操作值都是对象，则比较它们是不是指向同一个对象</p>
+</blockquote>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/11/02/Hexo-Github搭建个人博客/" class="next-post btn btn-default" title="Hexo+Github搭建个人博客">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Hexo+Github搭建个人博客</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript中数据类型的判断及转化"><span class="toc-text">Javascript中数据类型的判断及转化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript中的数据类型"><span class="toc-text">Javascript中的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript中的数据类型的判断"><span class="toc-text">Javascript中的数据类型的判断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-常见的判断方法：typeof"><span class="toc-text">1.常见的判断方法：typeof</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-判断已知对象的方法：instanceof"><span class="toc-text">2.判断已知对象的方法：instanceof</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-根据对象的constructor判断：-constructor"><span class="toc-text">3.根据对象的constructor判断： constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-通用方法：prototype"><span class="toc-text">4.通用方法：prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-万能方法：prototype"><span class="toc-text">5.万能方法：prototype</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript中的数据类型的转化"><span class="toc-text">Javascript中的数据类型的转化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-显示转换"><span class="toc-text">1.显示转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-隐式转换"><span class="toc-text">2.隐式转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-gt-用于检测是否为非数值函数-isNaN-mix"><span class="toc-text">1&gt;用于检测是否为非数值函数 isNaN(mix)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-gt-递增递减操作符（包括前置和后置）、一元正负符号操作符"><span class="toc-text">2&gt;递增递减操作符（包括前置和后置）、一元正负符号操作符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-gt-加法运算操作符"><span class="toc-text">3&gt;加法运算操作符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-gt-乘除、减号运算符、取模运算符"><span class="toc-text">4&gt;乘除、减号运算符、取模运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-gt-逻辑操作符（-、-amp-amp-、-）"><span class="toc-text">5&gt;逻辑操作符（!、&amp;&amp;、||）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#6-gt-关系操作符（-lt-gt-lt-gt-）"><span class="toc-text">6&gt;关系操作符（&lt;, &gt;, &lt;=, &gt;=）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-gt-相等操作符（-）"><span class="toc-text">7&gt; 相等操作符（==）</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
