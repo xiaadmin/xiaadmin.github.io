@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>JSON.parse()和JSON.stringify()的区别 | xiaxin</title>
+<title>Cookie和session的区别 | xiaxin</title>
 
 
     <link rel="alternate" href="/atom.xml" title="xiaxin" type="application/atom+xml">
@@ -136,9 +136,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="JSON.parse()和JSON.stringify()的区别">
+        <h1 id="Cookie和session的区别">
             
-	            JSON.parse()和JSON.stringify()的区别
+	            Cookie和session的区别
             
         </h1>
         <div class="post-meta">
@@ -146,8 +146,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/nodejs">
-            nodejs
+        <a href="/categories/前端">
+            前端
         </a>
     </span>
     
@@ -167,7 +167,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/11/14</span>
+            <span class="date-meta">2018/12/31</span>
         </span>
         
             <span class="fa-wrap">
@@ -183,21 +183,29 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="JSON-parse-和JSON-stringify-的区别"><a href="#JSON-parse-和JSON-stringify-的区别" class="headerlink" title="JSON.parse()和JSON.stringify()的区别"></a>JSON.parse()和JSON.stringify()的区别</h2><h4 id="JSON-parse-从一个字符串中解析出JSON对象"><a href="#JSON-parse-从一个字符串中解析出JSON对象" class="headerlink" title="JSON.parse()从一个字符串中解析出JSON对象"></a>JSON.parse()从一个字符串中解析出JSON对象</h4><blockquote>
-<p>例如<br>{“students”:[{“name”:”小明”,”sex”:”女”,”age”:23,”hobby”:”打台球”}]}</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var students=JSON.parse(date).students</span><br></pre></td></tr></table></figure>
+        <h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie:"></a>Cookie:</h4><p>在网站中，http请求是无状态的。也就是说即使第一次和服务器连接后并且登录成功后，第二次请求服务器依然不能知道当前请求是哪个用户。cookie的出现就是为了解决这个问题，第一次登录后服务器返回一些数据（cookie）给浏览器，然后浏览器保存在本地，当该用户发送第二次请求的时候，就会自动的把上次请求存储的cookie数据自动的携带给服务器，服务器通过浏览器携带的数据就能判断当前用户是哪个了。cookie存储的数据量有限，不同的浏览器有不同的存储大小，但一般不超过4KB。因此使用cookie只能存储一些小量的数据。</p>
+<p>Cookie的主要内容包括：名字，值，过期时间，路径和域。使用Fiddler抓包就可以看见，比方说我们打开百度的某个网站可以看到Headers包括Cookie，如下：</p>
 <blockquote>
-<p>执行之后的结果<br>name:”小明”,sex:”女”,age:23,hobby:”打台球”</p>
+<p>BIDUPSID: 9D2194F1CB8D1E56272947F6B0E5D47E<br>PSTM: 1472480791<br>BAIDUID: 3C64D3C3F1753134D13C33AFD2B38367:FG<br>ispeed_lsm: 2<br>MCITY: -131:<br>pgv_pvi: 3797581824<br>pgv_si: s9468756992<br>BDUSS: JhNXVoQmhPYTVENEdIUnQ5S05xcHZMMVY5QzFRNVh5SzZoV0xMVDR6RzV-bEJZSVFBQUFBJCQAAAAAAAAAAAEAAACteXsbYnRfY2hpbGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALlxKVi5cSlYZj<br>BD_HOME: 1<br>H_PS_PSSID: 1423_21080_17001_21454_21408_21530_21377_21525_21193_21340<br>BD_UPN: 123253<br>sug: 3<br>sugstore: 0<br>ORIGIN: 0<br>bdime: 0</p>
 </blockquote>
-<h4 id="JSON-stringify-从一个对象中解析出字符串"><a href="#JSON-stringify-从一个对象中解析出字符串" class="headerlink" title="JSON.stringify()从一个对象中解析出字符串"></a>JSON.stringify()从一个对象中解析出字符串</h4><p>同上面相反</p>
-<blockquote>
-<p>例如<br>var students={name:”小明”,sex:”女”,age:23,hobby:”打台球”} </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var saveDate=JSON.stringify(students)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>执行之后的结果<br>{“students”:[{“name”:”小明”,”sex”:”女”,”age”:23,”hobby”:”打台球”}]}</p>
-</blockquote>
+<p>key, value形式。过期时间可设置的，如不设，则浏览器关掉就消失了，存储在内存当中，否则就按设置的时间来存储在硬盘上的，过期后自动清除，比方说开关机关闭再打开浏览器后他都会还存在，前者称之为Session cookie 又叫 transient cookie，后者称之为Persistent cookie 又叫 permenent cookie。路径和域就是对应的域名，a网站的cookie自然不能给b用。</p>
+<h4 id="session"><a href="#session" class="headerlink" title="session:"></a>session:</h4><p>session和cookie的作用有点类似，都是为了存储用户相关的信息。不同的是，cookie是存储在本地浏览器，而session存储在服务器，客户端只有类似类似密钥的东西与服务器交互。存储在服务器的数据会更加的安全，不容易被窃取。但存储在服务器也有一定的弊端，就是会占用服务器的资源，但现在服务器已经发展至今，一些session信息还是绰绰有余的。</p>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
+<li>登录网站，今输入用户名密码登录了，第二天再打开很多情况下就直接打开了。这个时候用到的一个机制就是cookie。</li>
+<li>session一个场景是购物车，添加了商品之后客户端处可以知道添加了哪些商品，而服务器端如何判别呢，所以也需要存储一些信息就用到了session。</li>
+</ul>
+<ul>
+<li>存储在服务端：通过cookie存储一个session_id，然后具体的数据则是保存在session中。如果用户已经登录，则服务器会在cookie中保存一个session_id，下次再次请求的时候，会把该session_id携带上来，服务器根据session_id在session库中获取用户的session数据。就能知道该用户到底是谁，以及之前保存的一些状态信息。这种专业术语叫做server side session。</li>
+<li>将session数据加密，然后存储在cookie中。这种专业术语叫做client side session。flask采用的就是这种方式，但是也可以替换成其他形式。</li>
+</ul>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
+<li>存储数据量方面：session 能够存储任意的 java 对象，cookie 只能存储 String 类型的对象</li>
+<li>一个在客户端一个在服务端。因Cookie在客户端所以可以编辑伪造，不是十分安全。</li>
+<li>Session过多时会消耗服务器资源，大型网站会有专门Session服务器，Cookie存在客户端没问题。</li>
+<li>域的支持范围不一样，比方说a.com的Cookie在a.com下都能用，而<a href="http://www.a.com的Session在api.a.com下都不能用，解决这个问题的办法是JSONP或者跨域资源共享。" target="_blank" rel="noopener">www.a.com的Session在api.a.com下都不能用，解决这个问题的办法是JSONP或者跨域资源共享。</a></li>
+</ul>
+<h4 id="nodejs中session的应用"><a href="#nodejs中session的应用" class="headerlink" title="nodejs中session的应用"></a>nodejs中session的应用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//引用</span><br><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var session = require(&apos;express-session&apos;)</span><br><span class="line">var app = express()</span><br><span class="line">//配置</span><br><span class="line">app.use(session(&#123;</span><br><span class="line">  secret: &apos;keyboard cat&apos;,</span><br><span class="line">  resave: false,</span><br><span class="line">  saveUninitialized: true</span><br><span class="line">&#125;))</span><br><span class="line">//添加session数据</span><br><span class="line">//req.session.XXX=abc</span><br><span class="line">//使用session数据</span><br><span class="line">//req.session.XXX</span><br></pre></td></tr></table></figure>
+<p>//提示：默认情况下cookie数据是存储在内存中的，服务器一旦重启数据就会丢失，真正生产环境会对数据进行持久化。</p>
 
     </div>
     
@@ -231,15 +239,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/12/31/Cookie和session/" class="pre-post btn btn-default" title="Cookie和session的区别">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Cookie和session的区别</span>
-        </a>
     
-    
-        <a href="/2018/11/13/Javascript中数据类型的判断及转化/" class="next-post btn btn-default" title="Javascript中数据类型的判断及转化">
+        <a href="/2018/11/14/JSON.parse()和JSON.stringify()的区别/" class="next-post btn btn-default" title="JSON.parse()和JSON.stringify()的区别">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Javascript中数据类型的判断及转化</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">JSON.parse()和JSON.stringify()的区别</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -282,7 +285,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-parse-和JSON-stringify-的区别"><span class="toc-text">JSON.parse()和JSON.stringify()的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON-parse-从一个字符串中解析出JSON对象"><span class="toc-text">JSON.parse()从一个字符串中解析出JSON对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON-stringify-从一个对象中解析出字符串"><span class="toc-text">JSON.stringify()从一个对象中解析出字符串</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie"><span class="toc-text">Cookie:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#session"><span class="toc-text">session:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区别"><span class="toc-text">区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nodejs中session的应用"><span class="toc-text">nodejs中session的应用</span></a></li></ol>
         
     </div>
 </aside>
